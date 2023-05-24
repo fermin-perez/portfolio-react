@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Title } from '../layouts/Title';
 import { ContactLeft } from './ContactLeft';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
-  const [username, setUsername] = useState('');
+  const form = useRef();
+
+  const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
@@ -19,30 +22,34 @@ export const Contact = () => {
   };
   // ========== Email Validation end here ================
 
-  const handleSend = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    if (username === '') {
-      setErrMsg('Username is required!');
-    } else if (phoneNumber === '') {
-      setErrMsg('Phone number is required!');
-    } else if (email === '') {
-      setErrMsg('Please give your Email!');
-    } else if (!emailValidation(email)) {
-      setErrMsg('Give a valid Email!');
-    } else if (subject === '') {
-      setErrMsg('Plese give your Subject!');
-    } else if (message === '') {
-      setErrMsg('Message is required!');
-    } else {
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`
-      );
-      setErrMsg('');
-      setUsername('');
-      setPhoneNumber('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
+
+    try {
+      if (name === '') {
+        setErrMsg('Apellido y Nombre son requeridos!');
+      } else if (phoneNumber === '') {
+        setErrMsg('Teléfono es requerido!');
+      } else if (email === '') {
+        setErrMsg('Email es requerido!');
+      } else if (!emailValidation(email)) {
+        setErrMsg('Ingrese un email valido!');
+      } else if (subject === '') {
+        setErrMsg('Asunto es requerido!');
+      } else if (message === '') {
+        setErrMsg('Mensaje es requerido!');
+      } else {
+        await emailjs.sendForm('', '', form.current, '');
+        setErrMsg('');
+        setName('');
+        setPhoneNumber('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+        setSuccessMsg(`Gracias ${name}, ¡Tu mensaje se han enviado con éxito!`);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -57,7 +64,11 @@ export const Contact = () => {
         <div className='w-full h-auto flex flex-col lgl:flex-row justify-between'>
           <ContactLeft />
           <div className='w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne'>
-            <form className='w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5'>
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className='w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5'
+            >
               {errMsg && (
                 <p className='py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce'>
                   {errMsg}
@@ -74,13 +85,14 @@ export const Contact = () => {
                     Apellido y Nombre
                   </p>
                   <input
-                    onChange={(e) => setUsername(e.target.value)}
-                    value={username}
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                     className={`${
-                      errMsg === 'Username is required!' &&
+                      errMsg === 'Apellido y Nombre son requeridos!' &&
                       'outline-designColor'
                     } contactInput`}
                     type='text'
+                    name='name'
                   />
                 </div>
                 <div className='w-full lgl:w-1/2 flex flex-col gap-4'>
@@ -91,10 +103,11 @@ export const Contact = () => {
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     value={phoneNumber}
                     className={`${
-                      errMsg === 'Phone number is required!' &&
+                      errMsg === 'Teléfono es requerido!' &&
                       'outline-designColor'
                     } contactInput`}
                     type='text'
+                    name='phone'
                   />
                 </div>
               </div>
@@ -106,10 +119,10 @@ export const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   className={`${
-                    errMsg === 'Please give your Email!' &&
-                    'outline-designColor'
+                    errMsg === 'Email es requerido!' && 'outline-designColor'
                   } contactInput`}
                   type='email'
+                  name='email'
                 />
               </div>
               <div className='flex flex-col gap-4'>
@@ -120,10 +133,10 @@ export const Contact = () => {
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
                   className={`${
-                    errMsg === 'Plese give your Subject!' &&
-                    'outline-designColor'
+                    errMsg === 'Asunto es requerido!' && 'outline-designColor'
                   } contactInput`}
                   type='text'
+                  name='subject'
                 />
               </div>
               <div className='flex flex-col gap-4'>
@@ -134,15 +147,16 @@ export const Contact = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
                   className={`${
-                    errMsg === 'Message is required!' && 'outline-designColor'
+                    errMsg === 'Mensaje es requerido!' && 'outline-designColor'
                   } contactTextArea`}
                   cols='30'
                   rows='8'
+                  name='message'
                 ></textarea>
               </div>
               <div className='w-full'>
                 <button
-                  onClick={handleSend}
+                  type='submit'
                   className='w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent'
                 >
                   Enviar Consulta

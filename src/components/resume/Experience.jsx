@@ -16,7 +16,7 @@ export const Experience = () => {
           <p className='text-sm text-designColor tracking-[4px]'>
             2012 - {añoActual}
           </p>
-          <h2 className='text-4xl font-bold'>Experiencias</h2>
+          <h2 className='text-4xl font-bold'>Experiencias Laborales</h2>
         </div>
         <div className='mt-14 w-full h-[1000px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10'>
           <ResumeCard

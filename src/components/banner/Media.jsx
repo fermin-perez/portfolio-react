@@ -10,7 +10,7 @@ import {
   FaBootstrap,
   FaNodeJs,
   FaGithub,
-  FaInstagram,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
 
@@ -23,20 +23,20 @@ export const Media = () => {
         </h2>
         <div className='flex gap-4'>
           <a
+            href='https://wa.link/j2fwyp'
+            target='_blank'
+            rel='noreferrer'
+            className='bannerIcon'
+          >
+            <FaWhatsapp />
+          </a>
+          <a
             href='https://www.linkedin.com/in/fermin-perez/'
             target='_blank'
             rel='noreferrer'
             className='bannerIcon'
           >
             <FaLinkedinIn />
-          </a>
-          <a
-            href='https://www.instagram.com/ferminperez05/'
-            target='_blank'
-            rel='noreferrer'
-            className='bannerIcon'
-          >
-            <FaInstagram />
           </a>
           <a
             href='https://github.com/fermin-perez'

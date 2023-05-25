@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
-import { FaLinkedinIn, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { logo } from '../../assets/index';
 import { navLinksdata } from '../../constants';
 
@@ -76,20 +76,20 @@ export const Navbar = () => {
                 </h2>
                 <div className='flex gap-4'>
                   <a
+                    href='https://wa.link/j2fwyp'
+                    target='_blank'
+                    rel='noreferrer'
+                    className='bannerIcon'
+                  >
+                    <FaWhatsapp />
+                  </a>
+                  <a
                     href='https://www.linkedin.com/in/fermin-perez/'
                     target='_blank'
                     rel='noreferrer'
                     className='bannerIcon'
                   >
                     <FaLinkedinIn />
-                  </a>
-                  <a
-                    href='https://www.instagram.com/ferminperez05/'
-                    target='_blank'
-                    rel='noreferrer'
-                    className='bannerIcon'
-                  >
-                    <FaInstagram />
                   </a>
                   <a
                     href='https://github.com/fermin-perez'

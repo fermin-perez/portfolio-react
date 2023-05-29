@@ -53,6 +53,7 @@ export const Projects = () => {
           title='SEF'
           des='Desarrollo del sistema de administración del Sindicato de Empleados de Farmacia.'
           src={SEF}
+          link='https://sistemassef.com.ar/public/'
         />
       </div>
     </section>

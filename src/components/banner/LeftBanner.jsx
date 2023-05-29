@@ -26,7 +26,7 @@ export const LeftBanner = () => {
           />
         </h2>
         <p className='text-base font-bodyFont leading-6 tracking-wide'>
-          Soy un programador freelance full stack, poseo una sólida formación en
+          Soy un programador full stack, poseo una sólida formación en
           desarrollo web y una amplia experiencia trabajando de forma
           independiente en diversos proyectos.
         </p>

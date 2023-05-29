@@ -10,12 +10,12 @@ export const ContactLeft = () => {
         alt='contactImg'
       />
       <div className='flex flex-col gap-4'>
-        <h3 className='text-3xl font-bold text-white'>Perez Fermin</h3>
+        <h3 className='text-3xl font-bold text-white'>Fermin Perez</h3>
         <p className='text-lg font-normal text-gray-400'>
           Programador Full Stack
         </p>
         <p className='text-base text-gray-400 tracking-wide'>
-          Soy un programador freelance full stack, poseo una sólida formación en
+          Soy un programador full stack, poseo una sólida formación en
           desarrollo web y una amplia experiencia trabajando de forma
           independiente en diversos proyectos.
         </p>

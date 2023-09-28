@@ -40,10 +40,10 @@ export const Contact = () => {
         setErrMsg("Mensaje es requerido!");
       } else {
         await emailjs.sendForm(
-          "service_rnza4dm",
-          "template_psd0a95",
+          "service_s946zyv",
+          "template_ay61jct",
           form.current,
-          "cF1ecp9EEcNUCeflf"
+          "MqcDtPKF4-hw_525h"
         );
         setErrMsg("");
         setName("");

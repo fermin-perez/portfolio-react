@@ -8,6 +8,7 @@ import {
   BragadoEsNoticia,
   Xperiment,
   SEF,
+  Lucas,
 } from "../../assets/index";
 import { ProjectsCard } from "./ProjectsCard";
 
@@ -69,6 +70,12 @@ export const Projects = () => {
           des="Desarrollo del sistema de administración del Sindicato de Empleados de Farmacias."
           src={SEF}
           link="#"
+        />
+        <ProjectsCard
+          title="Lucas & Lucas"
+          des="Desarrollo de Tienda Online de Lucas & Lucas - Muebles y Artículos para el Hogar."
+          src={Lucas}
+          link="https://lucasylucas.com.ar/"
         />
       </div>
     </section>

@@ -8,6 +8,7 @@ import LSARG from "./images/projects/ls.jpg";
 import JMPBA from "./images/projects/jmpba.jpg";
 import BragadoEsNoticia from "./images/projects/bragado_esnoticia.jpeg";
 import SEF from "./images/projects/sef.jpg";
+import Lucas from "./images/projects/lucasylucas.jpeg";
 import testimonialOne from "./images/testmonial/testimonialOne.png";
 import testimonialTwo from "./images/testmonial/testimonialTwo.png";
 import quote from "./images/testmonial/quote.png";
@@ -23,6 +24,7 @@ export {
   LSARG,
   JMPBA,
   SEF,
+  Lucas,
   BragadoEsNoticia,
   testimonialOne,
   testimonialTwo,

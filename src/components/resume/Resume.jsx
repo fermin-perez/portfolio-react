@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Title } from '../layouts/Title';
-import { Education } from './Education';
-import { Skills } from './Skills';
+import { useState } from "react";
+import { Title } from "../layouts/Title";
+import { Education } from "./Education";
+import { Skills } from "./Skills";
 // import { Achievement } from './Achievement';
-import { Experience } from './Experience';
+import { Experience } from "./Experience";
 
 export const Resume = () => {
   const [educationData, setEducationData] = useState(true);
@@ -12,17 +12,17 @@ export const Resume = () => {
   // const [achievementData, setAchievementData] = useState(false);
   return (
     <section
-      id='resumen'
-      className='w-full py-20 border-b-[1px] border-b-black'
+      id="resumen"
+      className="w-full py-20 border-b-[1px] border-b-black"
     >
-      <div className='flex justify-center items-center text-center'>
+      <div className="flex justify-center items-center text-center">
         <Title
-          title='5+ AÑOS DE EXPERIENCIA'
-          des='Un resumen de mi currículum'
+          title="5+ AÑOS DE EXPERIENCIA"
+          des="Un resumen de mi currículum"
         />
       </div>
       <div>
-        <ul className='w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           <li
             onClick={
               () =>
@@ -33,8 +33,8 @@ export const Resume = () => {
             }
             className={`${
               educationData
-                ? 'border-designColor rounded-lg'
-                : 'border-transparent'
+                ? "border-designColor rounded-lg"
+                : "border-transparent"
             } resumeLi`}
           >
             Educación
@@ -48,7 +48,7 @@ export const Resume = () => {
               // setAchievementData(false)
             }
             className={`${
-              skillData ? 'border-designColor rounded-lg' : 'border-transparent'
+              skillData ? "border-designColor rounded-lg" : "border-transparent"
             } resumeLi`}
           >
             Skills
@@ -63,8 +63,8 @@ export const Resume = () => {
             }
             className={`${
               experienceData
-                ? 'border-designColor rounded-lg'
-                : 'border-transparent'
+                ? "border-designColor rounded-lg"
+                : "border-transparent"
             } resumeLi`}
           >
             Experiencia

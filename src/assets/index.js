@@ -9,6 +9,7 @@ import JMPBA from "./images/projects/jmpba.jpg";
 import BragadoEsNoticia from "./images/projects/bragado_esnoticia.jpeg";
 import SEF from "./images/projects/sef.jpg";
 import Lucas from "./images/projects/lucasylucas.jpeg";
+import Lalobox from "./images/projects/lalobox.jpg";
 import testimonialOne from "./images/testmonial/testimonialOne.png";
 import testimonialTwo from "./images/testmonial/testimonialTwo.png";
 import quote from "./images/testmonial/quote.png";
@@ -25,6 +26,7 @@ export {
   JMPBA,
   SEF,
   Lucas,
+  Lalobox,
   BragadoEsNoticia,
   testimonialOne,
   testimonialTwo,

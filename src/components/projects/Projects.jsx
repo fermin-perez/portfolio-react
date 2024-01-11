@@ -9,6 +9,7 @@ import {
   Xperiment,
   SEF,
   Lucas,
+  Lalobox,
 } from "../../assets/index";
 import { ProjectsCard } from "./ProjectsCard";
 
@@ -76,6 +77,12 @@ export const Projects = () => {
           des="Desarrollo de Tienda Online de Lucas & Lucas - Muebles y Artículos para el Hogar."
           src={Lucas}
           link="https://lucasylucas.com.ar/"
+        />
+          <ProjectsCard
+          title="Lalobox"
+          des="Desarrollo del sitio web de LALOBOX - Viviendas Modulares."
+          src={Lalobox}
+          link="https://lalobox.com.ar/"
         />
       </div>
     </section>
